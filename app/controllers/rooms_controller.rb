@@ -8,6 +8,10 @@ class RoomsController < ApplicationController
         
     end
 
+    def new
+        @room = Room.new
+    end
+
     private
     def set_room
         @room = Room.find(params[:id])
