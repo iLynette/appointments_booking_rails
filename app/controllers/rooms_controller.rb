@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
   end
 end
 
-    private
+private
 
 def set_room
   @room = Room.find(params[:id])
