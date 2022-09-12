@@ -35,6 +35,13 @@ def update
 end
 end
 
+def destroy
+    @room.destroy
+    respond_to do |format|
+        format.html { redirect_to rooms_url, notice: "Room was succesfully destroyed" }
+    end
+  end
+
 private
 
 def set_room
