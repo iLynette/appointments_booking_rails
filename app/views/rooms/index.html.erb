@@ -1,3 +1,12 @@
-<% @rooms.each do |room|%>
-	<% room.name %>
-<% end %>
+<h1>Rooms</h1>
+
+<div id="rooms">
+  <% @rooms.each do |room| %>
+    <%= room.name %>
+    <p>
+      <%= link_to "Show this room", room %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New room", new_room_path %>
