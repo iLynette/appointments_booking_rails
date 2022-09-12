@@ -22,25 +22,24 @@ class RoomsController < ApplicationController
   end
 end
 
-def edit
-end
+def edit; end
 
 def update
   respond_to do |format|
     if @room.update(room_params)
-        format.html { redirect_to room_url(@room), notice: "Room was succesfully updated" }
+      format.html { redirect_to room_url(@room), notice: 'Room was succesfully updated' }
     else
-        format.html { render :edit, status: :unprocessable_entity }
+      format.html { render :edit, status: :unprocessable_entity }
     end
-end
+  end
 end
 
 def destroy
-    @room.destroy
-    respond_to do |format|
-        format.html { redirect_to rooms_url, notice: "Room was succesfully destroyed" }
-    end
+  @room.destroy
+  respond_to do |format|
+    format.html { redirect_to rooms_url, notice: 'Room was succesfully destroyed' }
   end
+end
 
 private
 
