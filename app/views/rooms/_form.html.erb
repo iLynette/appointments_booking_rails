@@ -1,0 +1,15 @@
+<%= form_with(model: room) do |form|%>
+	<div>
+		<%= form.label :name, style: "display: block" %>
+		<%= form.text_field :name %>
+	</div>
+
+	<div>
+		<%= form.label :capacity, style: "display: block" %>
+		<%= form.number_field :capacity %>
+	</div>
+
+	<div>
+		<%= form.submit %>
+	</div>
+<% end %>
