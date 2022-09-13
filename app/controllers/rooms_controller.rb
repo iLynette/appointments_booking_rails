@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
-  before_action :set_room, only: %i[show edit update]
+  before_action :set_room, only: %i[show edit update destroy]
+
   def index
     @rooms = Room.all
   end
@@ -20,33 +21,34 @@ class RoomsController < ApplicationController
       end
     end
   end
-end
+    
+  def edit; end
 
-def edit; end
 
-def update
-  respond_to do |format|
-    if @room.update(room_params)
-      format.html { redirect_to room_url(@room), notice: 'Room was succesfully updated' }
-    else
-      format.html { render :edit, status: :unprocessable_entity }
+  def update
+    respond_to do |format|
+      if @room.update(room_params)
+        format.html { redirect_to room_url(@room), notice: 'Room was successfully updated.' }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
     end
   end
-end
 
-def destroy
-  @room.destroy
-  respond_to do |format|
-    format.html { redirect_to rooms_url, notice: 'Room was succesfully destroyed' }
+  def destroy
+    @room.destroy
+    respond_to do |format|
+      format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
+    end
   end
-end
 
-private
+  private
 
-def set_room
-  @room = Room.find(params[:id])
-end
+  def set_room
+    @room = Room.find(params[:id])
+  end
 
-def room_params
-  params.require(:room).permit(:name, :capacity)
+  def room_params
+    params.require(:room).permit(:name, :capacity)
+  end
 end
