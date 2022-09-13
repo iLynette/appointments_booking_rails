@@ -1,0 +1,26 @@
+<%= form_with(model: room) do |form|%>
+
+<% if room.errors.any? %>
+<div sytle="color: red">
+ <h2><%= pluralize(room.errors.count, "errors") %> Prohibited this room from saving </h2>
+ <ul>
+ <% room.errors.each do |error| %>
+	 <li><%= error.full_message %> </li>
+ <% end %>
+ </ul>
+
+<% end %>
+	<div>
+		<%= form.label :name, style: "display: block" %>
+		<%= form.text_field :name %>
+	</div>
+
+	<div>
+		<%= form.label :capacity, style: "display: block" %>
+		<%= form.number_field :capacity %>
+	</div>
+
+	<div>
+		<%= form.submit %>
+	</div>
+<% end %>
