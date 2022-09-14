@@ -7,6 +7,10 @@ class BookingsController < ApplicationController
     def show
     end
 
+    def new
+        @bookings = Booking.new
+    end
+
     private
 
     def set_booking
