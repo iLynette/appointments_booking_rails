@@ -5,10 +5,10 @@
 <div id="bookings">
   <% @bookings.each do |booking| %>
 
-   <p>booking: <%= booking.start %></p>
-   <p>Capacity: <%= booking.end %></p>
    <p>booking: <%= booking.purpose %></p>
-   <p>Capacity: <%= booking.room.name %></p>
+   <p>name: <%= booking.room.name %></p>
+   <p>start: <%= booking.start %></p>
+   <p>end: <%= booking.end %></p>
     <p>
       <%= link_to "Show this booking", booking %>
     </p>
