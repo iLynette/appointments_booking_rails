@@ -1,0 +1,8 @@
+<h2>List of bookings</h2>
+<% @bookings.each do |booking|%>
+<%= booking.start%>
+<%= booking.end%>
+<%= booking.purpose%>
+<%= booking.room.name%>
+
+<% end %>
