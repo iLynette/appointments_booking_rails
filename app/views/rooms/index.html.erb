@@ -2,7 +2,9 @@
 
 <div id="rooms">
   <% @rooms.each do |room| %>
-    <%= room.name %>
+
+   <p>Room: <%= room.name %></p>
+   <p>Capacity: <%= room.capacity %></p>
     <p>
       <%= link_to "Show this room", room %>
     </p>
