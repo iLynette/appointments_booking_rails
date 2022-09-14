@@ -1,0 +1,23 @@
+<%= form_with(model: booking) do |form|%>
+
+<div>
+<%= form.label :start, style: "display: block" %>
+<%= form.datetime_field :start%>
+</div>
+
+<div>
+<%= form.label :end, style: "display: block" %>
+<%= form.datetime_field :end%>
+</div>
+
+<div>
+<%= form.label :purpose, style: "display: block" %>
+<%= form.text_field :purpose%>
+</div>
+
+<div>
+<%= form.label :room, style: "display: block" %>
+<%= form.collection_select :room_id, Room.all, :id, :name%>
+</div>
+
+<% end %>
