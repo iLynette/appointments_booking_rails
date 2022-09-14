@@ -22,6 +22,18 @@ class BookingsController < ApplicationController
       end
     end
   
+    def edit; end
+  
+    def update
+      respond_to do |format|
+        if @booking.update(booking_params)
+          format.html { redirect_to booking_url(@booking), notice: 'Booking was successfully updated.' }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+        end
+      end
+    end
+  
     private
   
     def set_booking
