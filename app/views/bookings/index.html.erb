@@ -1,14 +1,12 @@
-
-
 <h1>Bookings</h1>
 
 <div id="bookings">
   <% @bookings.each do |booking| %>
 
-   <p>booking: <%= booking.purpose %></p>
-   <p>name: <%= booking.room.name %></p>
-   <p>start: <%= booking.start %></p>
-   <p>end: <%= booking.end %></p>
+   <p>Booking: <%= booking.purpose %></p>
+   <p>Name: <%= link_to booking.room.name, booking.room %></p>
+   <p>Start: <%= booking.start %></p>
+   <p>End: <%= booking.end %></p>
     <p>
       <%= link_to "Show this booking", booking %>
     </p>
