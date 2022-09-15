@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 2022-09-13 22:42:43
+  end: 2022-09-13 22:42:43
+  purpose: MyString
+  room_id: 1
+
+two:
+  start: 2022-09-13 22:42:43
+  end: 2022-09-13 22:42:43
+  purpose: MyString
+  room_id: 1

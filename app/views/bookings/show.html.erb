@@ -1,0 +1,9 @@
+<div>
+<p><%= @booking.purpose%></p>
+<p><%= @booking.room.name%></p>
+<p><%= @booking.start%></p>
+<p><%= @booking.end%></p>
+
+<%= button_to "Destroy booking", @booking, method: :delete %>
+
+</div>
