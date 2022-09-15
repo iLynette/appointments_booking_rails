@@ -1,3 +1,12 @@
 <%= @room.name %>
 <%= @room.capacity %>
+
+<% @room.bookings.each do |booking| %>
+<p>Start:<%= booking.start %> </p>
+<p>End:<%= booking.end %> </p>
+<p>purpose:<%= booking.purpose %> </p>
+<p><% link_to "Booking", booking %> </p>
+
 <%= button_to "Destroy this room", @room, method: :delete %>
+
+<% end %>
