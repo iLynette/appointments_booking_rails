@@ -19,6 +19,11 @@
 <%= form.label :room, style: "display: block" %>
 <%= form.collection_select :room_id, Room.all, :id, :name%>
 </div>
+
+<div>
+<%= form.hidden_field :user_id, value: current_user.id%>
+</div>
+
 <div>
 <%= form.submit%>
 </div>
